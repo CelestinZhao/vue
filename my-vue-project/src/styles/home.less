@@ -1,0 +1,82 @@
+// 导入变量文件
+@import './variables.less';
+
+// Home页面样式
+.home-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+  .hero-section {
+    text-align: center;
+    padding: @spacing-xl 0;
+    color: white;
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: @spacing-md;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: @font-size-lg;
+      margin-bottom: @spacing-lg;
+      opacity: 0.9;
+    }
+  }
+
+  .features-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: @spacing-lg;
+    margin-top: @spacing-xl;
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: @border-radius;
+      padding: @spacing-lg;
+      box-shadow: @box-shadow;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      h3 {
+        color: @primary-color;
+        margin-bottom: @spacing-sm;
+        font-size: 1.5rem;
+      }
+
+      p {
+        color: #666;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .demo-buttons {
+    display: flex;
+    gap: @spacing-md;
+    justify-content: center;
+    margin-top: @spacing-xl;
+    flex-wrap: wrap;
+  }
+}
+
+// 响应式调整
+@media (max-width: 768px) {
+  .home-page {
+    .hero-section h1 {
+      font-size: 2rem;
+    }
+
+    .features-section {
+      grid-template-columns: 1fr;
+    }
+
+    .demo-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

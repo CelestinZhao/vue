@@ -1,0 +1,380 @@
+.workout-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== 训练进行中 ========== */
+.workout-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 顶部 */
+.workout-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.top-left {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-icon {
+  font-size: 36rpx;
+  color: #999;
+}
+
+.top-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #4A4A4A;
+}
+
+.top-progress {
+  font-size: 26rpx;
+  color: #FF6B81;
+  font-weight: bold;
+}
+
+/* 进度条 */
+.progress-track {
+  width: calc(100% - 60rpx);
+  height: 10rpx;
+  background: rgba(255, 154, 162, 0.2);
+  border-radius: 5rpx;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FF9AA2, #FF6B81);
+  border-radius: 5rpx;
+  transition: width 0.5s ease;
+}
+
+/* 实时卡路里 */
+.calorie-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30rpx;
+}
+
+.calorie-flame {
+  font-size: 48rpx;
+  animation: flamePulse 1s ease-in-out infinite;
+}
+
+@keyframes flamePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.calorie-number-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 8rpx;
+}
+
+.calorie-number {
+  font-size: 72rpx;
+  font-weight: bold;
+  color: #FF6B81;
+  line-height: 1;
+}
+
+.calorie-unit {
+  font-size: 26rpx;
+  color: #FF9AA2;
+}
+
+.calorie-label {
+  font-size: 24rpx;
+  color: #AAAAAA;
+  margin-top: 4rpx;
+}
+
+/* 当前动作 */
+.current-exercise {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20rpx;
+  flex: 1;
+}
+
+.exercise-status {
+  background: #FFE8EC;
+  padding: 10rpx 30rpx;
+  border-radius: 30rpx;
+  margin-bottom: 16rpx;
+
+  &.resting {
+    background: #E8FFF3;
+
+    .status-text {
+      color: #6BC5A0;
+    }
+  }
+}
+
+.status-text {
+  font-size: 26rpx;
+  color: #FF6B81;
+  font-weight: bold;
+}
+
+.exercise-emoji-big {
+  font-size: 80rpx;
+  margin-bottom: 8rpx;
+}
+
+.exercise-name-big {
+  font-size: 38rpx;
+  font-weight: bold;
+  color: #4A4A4A;
+}
+
+/* 倒计时圆环 */
+.timer-ring-wrapper {
+  margin-top: 30rpx;
+}
+
+.timer-ring {
+  position: relative;
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.timer-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.timer-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer-seconds {
+  font-size: 72rpx;
+  font-weight: bold;
+  color: #4A4A4A;
+  line-height: 1;
+}
+
+.timer-label {
+  font-size: 24rpx;
+  color: #AAAAAA;
+  margin-top: 8rpx;
+}
+
+/* 下一个动作 */
+.next-exercise {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  margin-top: 24rpx;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 16rpx 30rpx;
+  border-radius: 30rpx;
+}
+
+.next-label {
+  font-size: 24rpx;
+  color: #AAAAAA;
+}
+
+.next-name {
+  font-size: 26rpx;
+  color: #4A4A4A;
+  font-weight: bold;
+}
+
+/* 控制按钮 */
+.workout-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50rpx;
+  padding: 30rpx 0;
+}
+
+.control-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &.stop, &.skip {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 32rpx;
+    box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  &.main {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF6B81, #FF9AA2);
+    box-shadow: 0 8rpx 30rpx rgba(255, 107, 129, 0.5);
+
+    &.paused {
+      background: linear-gradient(135deg, #B5EAD7, #6BC5A0);
+      box-shadow: 0 8rpx 30rpx rgba(107, 197, 160, 0.5);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
+
+.control-label {
+  font-size: 20rpx;
+  color: #999;
+  margin-top: 4rpx;
+}
+
+.main-icon {
+  font-size: 44rpx;
+}
+
+/* 底部时间 */
+.workout-footer {
+  padding: 16rpx 0 calc(16rpx + env(safe-area-inset-bottom));
+}
+
+.footer-time {
+  font-size: 28rpx;
+  color: #999;
+}
+
+/* ========== 训练完成页 ========== */
+.finish-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40rpx;
+}
+
+.finish-confetti {
+  font-size: 100rpx;
+  animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20rpx); }
+}
+
+.finish-title {
+  font-size: 42rpx;
+  font-weight: bold;
+  color: #FF6B81;
+  margin-top: 20rpx;
+}
+
+.finish-mascot {
+  font-size: 60rpx;
+  margin-top: 16rpx;
+}
+
+.finish-stats-card {
+  display: flex;
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  padding: 36rpx 40rpx;
+  gap: 50rpx;
+  margin-top: 40rpx;
+  box-shadow: 0 4rpx 20rpx rgba(255, 107, 129, 0.15);
+}
+
+.finish-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.finish-stat-icon {
+  font-size: 40rpx;
+}
+
+.finish-stat-value {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #FF6B81;
+  margin-top: 8rpx;
+}
+
+.finish-stat-label {
+  font-size: 22rpx;
+  color: #AAAAAA;
+  margin-top: 4rpx;
+}
+
+.finish-encourage {
+  font-size: 28rpx;
+  color: #FF9AA2;
+  margin-top: 30rpx;
+  text-align: center;
+}
+
+.finish-btns {
+  display: flex;
+  gap: 24rpx;
+  margin-top: 50rpx;
+  width: 100%;
+}
+
+.finish-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 26rpx 0;
+  border-radius: 50rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+
+  &.primary {
+    background: linear-gradient(135deg, #FF6B81, #FF9AA2);
+    color: #FFFFFF;
+    box-shadow: 0 6rpx 20rpx rgba(255, 107, 129, 0.4);
+  }
+
+  &.secondary {
+    background: #FFFFFF;
+    color: #FF6B81;
+    border: 3rpx solid #FF9AA2;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}

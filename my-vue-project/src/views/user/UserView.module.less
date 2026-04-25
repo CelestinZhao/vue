@@ -1,0 +1,70 @@
+@import '@/styles/variables.less';
+
+.user-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.user-page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+  }
+}
+
+.user-page__stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.user-page__search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+// 统计卡片
+.stat-item {
+  flex: 1;
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px 20px;
+  box-shadow: @box-shadow;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+
+  &.active {
+    color: @success-color;
+  }
+
+  &.admin {
+    color: @primary-color;
+  }
+}
+
+.stat-label {
+  font-size: 13px;
+  color: #888;
+}
+
+.search-hint {
+  font-size: 13px;
+  color: #999;
+}

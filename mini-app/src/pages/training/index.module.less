@@ -1,0 +1,212 @@
+.training-container {
+  min-height: 100vh;
+  background: #FFF5F5;
+  padding-bottom: 200rpx;
+}
+
+/* 标签切换 */
+.type-tabs {
+  display: flex;
+  padding: 24rpx;
+  gap: 16rpx;
+}
+
+.type-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx 10rpx;
+  border-radius: 20rpx;
+  background: #FFFFFF;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+  transition: all 0.3s;
+
+  &.active {
+    box-shadow: 0 6rpx 24rpx rgba(255, 107, 129, 0.3);
+
+    .tab-name {
+      color: #FFFFFF;
+      font-weight: bold;
+    }
+  }
+}
+
+.tab-icon {
+  font-size: 40rpx;
+}
+
+.tab-name {
+  font-size: 24rpx;
+  color: #666666;
+  margin-top: 8rpx;
+}
+
+/* 训练信息卡片 */
+.training-info-card {
+  margin-top: 0;
+}
+
+.info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.info-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #4A4A4A;
+  display: block;
+}
+
+.info-desc {
+  font-size: 24rpx;
+  color: #AAAAAA;
+  margin-top: 8rpx;
+  display: block;
+}
+
+.info-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.info-cal {
+  font-size: 26rpx;
+  color: #FF6B81;
+  font-weight: bold;
+}
+
+.info-time {
+  font-size: 24rpx;
+  color: #AAAAAA;
+  margin-top: 6rpx;
+}
+
+/* Section */
+.section-header {
+  padding: 24rpx 30rpx 12rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #4A4A4A;
+}
+
+/* 动作列表 */
+.exercise-list {
+  padding: 0 24rpx;
+}
+
+.exercise-item {
+  display: flex;
+  align-items: center;
+  padding: 24rpx;
+  margin: 12rpx 0;
+}
+
+.exercise-index {
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF9AA2, #FFB7B2);
+  color: #FFFFFF;
+  font-size: 24rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16rpx;
+}
+
+.exercise-emoji {
+  font-size: 44rpx;
+  margin-right: 16rpx;
+}
+
+.exercise-info {
+  flex: 1;
+}
+
+.exercise-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #4A4A4A;
+  display: block;
+}
+
+.exercise-tags {
+  display: flex;
+  gap: 12rpx;
+  margin-top: 8rpx;
+}
+
+.tag {
+  font-size: 22rpx;
+  color: #FF9AA2;
+  background: #FFF0F2;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+
+  &.rest {
+    color: #B5EAD7;
+    background: #F0FFF8;
+  }
+}
+
+.exercise-cal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cal-value {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #FF6B81;
+}
+
+.cal-unit {
+  font-size: 20rpx;
+  color: #AAAAAA;
+}
+
+/* 底部按钮 */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24rpx 40rpx;
+  padding-bottom: calc(24rpx + env(safe-area-inset-bottom));
+  background: rgba(255, 245, 245, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.start-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28rpx 0;
+  border-radius: 50rpx;
+  box-shadow: 0 8rpx 30rpx rgba(255, 107, 129, 0.4);
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+.start-icon {
+  font-size: 36rpx;
+  margin-right: 12rpx;
+}
+
+.start-text {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+  letter-spacing: 4rpx;
+}

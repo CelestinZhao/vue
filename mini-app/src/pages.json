@@ -1,0 +1,71 @@
+{
+  "pages": [
+    {
+      "path": "pages/home/index",
+      "style": {
+        "navigationBarTitleText": "🏋️ 萌动健身",
+        "navigationBarBackgroundColor": "#FF9AA2",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/training/index",
+      "style": {
+        "navigationBarTitleText": "训练计划",
+        "navigationBarBackgroundColor": "#FFB7B2",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/training/detail",
+      "style": {
+        "navigationBarTitleText": "训练详情",
+        "navigationBarBackgroundColor": "#FFB7B2",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/workout/index",
+      "style": {
+        "navigationBarTitleText": "开始训练",
+        "navigationBarBackgroundColor": "#FFDAC1",
+        "navigationBarTextStyle": "white",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/profile/index",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationBarBackgroundColor": "#B5EAD7",
+        "navigationBarTextStyle": "white"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#FF9AA2",
+    "backgroundColor": "#FFF5F5"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#999999",
+    "selectedColor": "#FF6B81",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/training/index",
+        "text": "训练"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的"
+      }
+    ]
+  }
+}

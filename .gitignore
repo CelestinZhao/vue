@@ -1,0 +1,5 @@
+.hbuilderx/
+.DS_Store
+.idea
+.codebuddy
+*.log
