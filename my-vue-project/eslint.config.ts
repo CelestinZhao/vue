@@ -3,7 +3,6 @@ import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescri
 import pluginVue from 'eslint-plugin-vue'
 import pluginPlaywright from 'eslint-plugin-playwright'
 import pluginVitest from '@vitest/eslint-plugin'
-import pluginOxlint from 'eslint-plugin-oxlint'
 import pluginPrettier from 'eslint-plugin-prettier'
 import prettierConfig from 'eslint-config-prettier/flat'
 
@@ -32,8 +31,6 @@ export default defineConfigWithVueTs(
     ...pluginVitest.configs.recommended,
     files: ['src/**/__tests__/*'],
   },
-
-  ...pluginOxlint.buildFromOxlintConfigFile('.oxlintrc.json'),
 
   // 禁用所有与 prettier 格式化冲突的 ESLint 规则
   prettierConfig,
